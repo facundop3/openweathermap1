@@ -1,0 +1,16 @@
+{
+  "name": "nativenode",
+  "version": "1.0.0",
+  "description": "Native node modules on electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Facundo Petre",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "electron": "^1.7.6",
+    "jquery": "^3.2.1"
+  }
+}
