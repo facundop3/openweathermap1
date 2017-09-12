@@ -13,7 +13,7 @@ $('#Weather').on('click', ()=>{
     method:'GET',
     protocol: 'http:',
     hostname:'api.openweathermap.org',
-    port: 443,
+    port: 80,
     path:`/data/2.5/weather?q=${Country}&APPID=${APIKEY}`});
 
   request.on('response', (response)=>{
@@ -21,11 +21,12 @@ $('#Weather').on('click', ()=>{
     console.log(`STATUS: ${response.statusCode}`);
     console.log(`HEADERS: ${JSON.stringify(response.headders)}`);
     response.on('data', (chunk)=>{
-      console.log(`BODY: ${chunk}`);
+      console.log(`BODY:`);
+      console.log(JSON.parse(chunk));
     });
     response.on('end', ()=>{
       console.log('No more data on response');
-      request.end();
     });
   });
+  request.end();
 });
