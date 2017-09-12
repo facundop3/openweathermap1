@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <meta charset="utf-8">
@@ -7,16 +7,23 @@
     <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
   </head>
   <body>
-    <h1>Hello</h1>
-    <div class="form-group">
-      <label for="Country">Country: </label><br>
+    <div class="container">
+      <h1>Hello Weather</h1>
+      <small>The desktop app created for learning to deal with net electron function.</small>
+
+    <div class="form-group" style="margin-top:1em;">
+      <label for="Country">Type your city: </label><br>
       <input type="text" id="Country" placeholder="Country" value="Uruguay"/><br>
       <small>Input the contry you want..</small><br>
     </div>
     <div class="form-group">
       <button class="btn btn-primary" id="Weather">Weather</button><br>
     </div>
-    <script type="text/javascript" src="renderer.js"></script>
-    <textarea id="Response" readonly></textarea>
+      <div class="form-group">
+        <label for="Response">Weather:</label>
+        <textarea id="Response" class="form-control col-xs-6" rows="5" readonly></textarea>
+    </div>
+</div>
+<script type="text/javascript" src="renderer.js"></script>
   </body>
 </html>

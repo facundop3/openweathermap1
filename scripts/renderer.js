@@ -22,7 +22,11 @@ $('#Weather').on('click', ()=>{
     console.log(`HEADERS: ${JSON.stringify(response.headders)}`);
     response.on('data', (chunk)=>{
       console.log(`BODY:`);
-      console.log(JSON.parse(chunk));
+      var bodyRes = JSON.parse(chunk);
+      console.log(bodyRes.main.temp -273.15);
+      console.log( bodyRes.main.humidity);
+      $('#Response').text(`Temperature in ${Country}: ` + ((bodyRes.main.temp -273.15).toFixed(2))+ ` Cº \n Humidity:  ${bodyRes.main.humidity} % \n Wind Speed: ${bodyRes.wind.speed} m/s`);
+
     });
     response.on('end', ()=>{
       console.log('No more data on response');
